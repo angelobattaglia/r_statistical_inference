@@ -1,4 +1,8 @@
-# Setting up a Jupyter Notebook environment with R
+# Statistical Inference implementation in R
+
+An implementation of some statistical inference topics in R.
+
+## Setting up a Jupyter Notebook environment with R
 To install and start a Jupyter Notebook session with the R programming language
 you'll need to follow these steps (NOTE: highly recommended to use the latest R distribution):
 
@@ -17,6 +21,16 @@ IRkernel::installspec(user = FALSE)
 ```
 
 The first command installs the IRkernel package, and the second command registers the kernel with Jupyter.
+
+If you want to install some other library that you'll be using in your notebook sessions, like ggplot2,
+you can keep the Rterm opened on the terminal and run the following command:
+
+```R
+install.packages('ggplot2')
+```
+
+it will install the packages globally and usually these are located somewhere in the file system, the R Shell
+should be prompting the path, afterwards.
 
 3. **Install Jupyter Notebook:**
 
