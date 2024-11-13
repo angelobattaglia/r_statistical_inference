@@ -21,6 +21,8 @@ To use R in Jupyter Notebooks, you need to install the IRkernel. Open an R conso
 install.packages('IRkernel')
 # To install it for all users on the local machine
 IRkernel::installspec(user = FALSE)
+# If it is for one user, then:
+IRkernel::installspec(user = TRUE)
 ```
 
 The first command installs the IRkernel package, and the second command registers the kernel with Jupyter.
