@@ -106,3 +106,50 @@ Here’s how to create a virtual environment in R using `renv`:
    ```
 
 This allows you to maintain reproducibility and isolate package versions for your R projects, much like Python's `venv`.`
+
+# In the R shell, how to "pwd" or just run a script, whilst in the same folder ? 
+
+In the R shell, there are commands and functions you can use to manage the working directory and execute scripts:
+
+### 1. **Check the Current Working Directory (`pwd`)**
+   To check the current working directory in R, use:
+   ```R
+   getwd()
+   ```
+   This is equivalent to the `pwd` command in the terminal.
+
+---
+
+### 2. **Set the Working Directory**
+   If you need to change the working directory to the folder where your script is located:
+   ```R
+   setwd("path/to/your/folder")
+   ```
+   Replace `"path/to/your/folder"` with the actual directory path.
+
+---
+
+### 3. **Run a Script in the Same Folder**
+   To run an R script in the current working directory, use:
+   ```R
+   source("script_name.R")
+   ```
+   Replace `"script_name.R"` with the name of your script file.
+
+   **Tip:** If the script is in the current working directory, you don't need to specify the full path. If it's in another directory, provide the relative or absolute path.
+
+---
+
+### Automating the Process
+If you want the script to automatically set its directory to the folder where it's located, add the following at the beginning of the script:
+
+```R
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+```
+
+This requires the `rstudioapi` package, which you can install using:
+```R
+install.packages("rstudioapi")
+```
+
+This ensures the script runs from its own folder regardless of where the R shell was started.
